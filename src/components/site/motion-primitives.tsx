@@ -9,6 +9,7 @@ import {
   useScroll,
   useTransform,
   animate,
+  type Variants,
 } from "framer-motion";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
@@ -17,7 +18,7 @@ import { cn } from "@/lib/utils";
 
 type RevealVariant = "fade" | "up" | "scale" | "blur" | "clip";
 
-const variants: Record<RevealVariant, { hidden: Record<string, unknown>; show: Record<string, unknown> }> = {
+const variants: Record<RevealVariant, Variants> = {
   fade: { hidden: { opacity: 0 }, show: { opacity: 1 } },
   up: { hidden: { opacity: 0, y: 42 }, show: { opacity: 1, y: 0 } },
   scale: { hidden: { opacity: 0, scale: 0.94 }, show: { opacity: 1, scale: 1 } },
@@ -78,8 +79,12 @@ export function AnimatedLines({
         <span key={line + i} className="block overflow-hidden">
           <motion.span
             className={cn("block", lineClassName)}
-            initial={reduce ? undefined : { y: "110%", opacity: 0, filter: "blur(10px)" }}
-            animate={reduce ? undefined : { y: "0%", opacity: 1, filter: "blur(0px)" }}
+            {...(reduce
+              ? {}
+              : {
+                  initial: { y: "110%", opacity: 0, filter: "blur(10px)" },
+                  animate: { y: "0%", opacity: 1, filter: "blur(0px)" },
+                })}
             transition={{ duration: 1, delay: delay + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
           >
             {line}
@@ -99,8 +104,9 @@ export function WordReveal({ text, className }: { text: string; className?: stri
         <span key={w + i} className="inline-block overflow-hidden align-bottom">
           <motion.span
             className="inline-block"
-            initial={reduce ? undefined : { y: "100%", opacity: 0 }}
-            whileInView={reduce ? undefined : { y: "0%", opacity: 1 }}
+            {...(reduce
+              ? {}
+              : { initial: { y: "100%", opacity: 0 }, whileInView: { y: "0%", opacity: 1 } })}
             viewport={{ once: true, margin: "-10% 0px" }}
             transition={{ duration: 0.7, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
           >
@@ -132,7 +138,7 @@ export function Magnetic({
     <motion.div
       ref={ref}
       className={cn("inline-block", className)}
-      style={reduce ? undefined : { x, y }}
+      {...(reduce ? {} : { style: { x, y } })}
       onPointerMove={(e) => {
         if (reduce || e.pointerType !== "mouse" || !ref.current) return;
         const r = ref.current.getBoundingClientRect();
@@ -204,7 +210,7 @@ export function Parallax({
 
   return (
     <div ref={ref} className={className}>
-      <motion.div style={reduce ? undefined : { y }}>{children}</motion.div>
+      <motion.div {...(reduce ? {} : { style: { y } })}>{children}</motion.div>
     </div>
   );
 }
