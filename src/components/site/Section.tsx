@@ -38,7 +38,7 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <header className="relative overflow-hidden pt-36 pb-16 md:pt-52 md:pb-24">
+    <header className="relative overflow-hidden pt-32 pb-10 md:pt-48 md:pb-14">
       <div className="mx-auto w-full max-w-[1400px] px-5 md:px-10">
         <SectionLabel>{label}</SectionLabel>
         <div className="mt-8">{lines}</div>

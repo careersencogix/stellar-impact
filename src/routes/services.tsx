@@ -56,7 +56,7 @@ function Services() {
         </div>
       </PageHero>
 
-      <Section className="pt-8">
+      <Section className="pt-6 md:pt-10">
         <div className="border-t border-border">
           {SERVICES.map((s, i) => {
             const Icon = ICONS[s.icon as keyof typeof ICONS];
