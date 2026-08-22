@@ -50,7 +50,7 @@ function Contact() {
           <AnimatedLines
             className="display-xl"
             lines={["Let's build", "something", "unignorable."]}
-            lineClassName="[&:nth-child(3)]:text-gradient"
+            accentLine={2}
           />
         }
         copy="Have a project, idea or growth challenge? Let's talk."

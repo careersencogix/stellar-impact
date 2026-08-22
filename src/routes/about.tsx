@@ -44,7 +44,7 @@ function About() {
           <AnimatedLines
             className="display-xl"
             lines={["We build", "digital", "momentum."]}
-            lineClassName="[&:nth-child(2)]:text-gradient"
+            accentLine={1}
           />
         }
         copy="Strategy without creativity is invisible. Creativity without strategy is noise. We combine both."

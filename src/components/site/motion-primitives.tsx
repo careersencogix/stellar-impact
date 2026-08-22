@@ -64,12 +64,12 @@ export function Reveal({
 export function AnimatedLines({
   lines,
   className,
-  lineClassName,
+  accentLine,
   delay = 0,
 }: {
   lines: string[];
   className?: string;
-  lineClassName?: string;
+  accentLine?: number;
   delay?: number;
 }) {
   const reduce = useReducedMotion();
@@ -78,7 +78,7 @@ export function AnimatedLines({
       {lines.map((line, i) => (
         <span key={line + i} className="block overflow-hidden">
           <motion.span
-            className={cn("block", lineClassName)}
+            className={cn("block", i === accentLine && "text-gradient")}
             {...(reduce
               ? {}
               : {

@@ -46,7 +46,7 @@ function Services() {
           <AnimatedLines
             className="display-xl"
             lines={["Digital services", "built for growth."]}
-            lineClassName="[&:nth-child(2)]:text-gradient"
+            accentLine={1}
           />
         }
         copy="Eight connected disciplines. Pick one, or let us assemble the full growth engine around your brand."

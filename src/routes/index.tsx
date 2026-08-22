@@ -88,7 +88,7 @@ function Hero() {
             className="display-xl mt-7"
             delay={0.25}
             lines={["We make", "brands", "impossible", "to ignore."]}
-            lineClassName="[&:nth-child(3)]:text-gradient"
+            accentLine={2}
           />
 
           <motion.p

@@ -55,7 +55,7 @@ function Work() {
           <AnimatedLines
             className="display-xl"
             lines={["Work that", "speaks louder."]}
-            lineClassName="[&:nth-child(2)]:text-gradient"
+            accentLine={1}
           />
         }
         copy="Six engagements, six growth problems, one common thread: creative that earns attention and data that proves it worked."
