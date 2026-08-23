@@ -150,7 +150,7 @@ function InquiryForm() {
                   />
                 </Field>
                 <Field label="Phone" htmlFor="phone">
-                  <input id="phone" name="phone" placeholder="+91 00000 00000" className={fieldClass} />
+                  <input id="phone" name="phone" placeholder="7897402440" className={fieldClass} />
                 </Field>
                 <Field label="Company" htmlFor="company">
                   <input id="company" name="company" placeholder="Brand or company" className={fieldClass} />
@@ -237,7 +237,7 @@ function ContactInfo() {
           <p className="font-display text-[0.6rem] tracking-[0.42em] text-muted-foreground uppercase">
             Solution
           </p>
-          <p className="mt-5 text-sm text-muted-foreground">Digital Marketing &amp; Growth Agency</p>
+          <p className="mt-5 text-sm text-muted-foreground">Email Marketing &amp; Growth Agency</p>
         </div>
 
         <ul className="space-y-6 text-sm">

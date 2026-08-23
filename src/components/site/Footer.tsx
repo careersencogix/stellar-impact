@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { BRAND, NAV_LINKS } from "@/lib/site-data";
 
 const SERVICE_LINKS = [
-  "Digital Marketing",
+  "Email Marketing",
   "SEO",
   "Social Media",
   "Performance Marketing",
@@ -26,7 +26,7 @@ export function Footer() {
               Solution
             </p>
             <p className="mt-6 max-w-sm text-sm text-muted-foreground">
-              A creative digital marketing and growth agency engineering attention into measurable
+              A creative email marketing and growth agency engineering attention into measurable
               revenue.
             </p>
             <a

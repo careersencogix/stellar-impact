@@ -7,10 +7,9 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Backdrop } from "@/components/site/Backdrop";
 import { Cursor } from "@/components/site/Cursor";
 import { Footer } from "@/components/site/Footer";
@@ -42,9 +41,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -82,11 +78,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Microweb Solution | Digital Marketing & Growth Agency" },
+      { title: "Microweb Solution | Email Marketing & Growth Agency" },
       {
         name: "description",
         content:
-          "Microweb Solution helps ambitious brands grow through digital marketing, SEO, social media, performance marketing, branding and technology.",
+          "Microweb Solution helps ambitious brands grow through email marketing, SEO, social media, performance marketing, branding and technology.",
       },
       { name: "author", content: "Microweb Solution" },
       { name: "theme-color", content: "#080808" },
@@ -102,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/logo.jpeg", type: "image/jpeg" },
     ],
   }),
   shellComponent: RootShell,

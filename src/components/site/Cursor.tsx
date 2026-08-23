@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export function Cursor() {
   const reduce = useReducedMotion();
   const [enabled, setEnabled] = useState(false);
-  const [mode, setMode] = useState<"idle" | "hover" | "view">("idle");
+    const [mode, setMode] = useState<"idle" | "hover" | "explore">("idle");
   const mx = useMotionValue(-100);
   const my = useMotionValue(-100);
   const x = useSpring(mx, { stiffness: 700, damping: 40, mass: 0.35 });
@@ -22,7 +22,7 @@ export function Cursor() {
       mx.set(e.clientX);
       my.set(e.clientY);
       const el = e.target as HTMLElement | null;
-      if (el?.closest("[data-cursor='view']")) setMode("view");
+        if (el?.closest("[data-cursor='explore']")) setMode("explore");
       else if (el?.closest("a, button, [role='button'], input, textarea, select")) setMode("hover");
       else setMode("idle");
     };
@@ -32,7 +32,7 @@ export function Cursor() {
 
   if (!enabled || reduce) return null;
 
-  const size = mode === "view" ? 78 : mode === "hover" ? 46 : 12;
+    const size = mode === "explore" ? 78 : mode === "hover" ? 46 : 12;
 
   return (
     <motion.div
@@ -51,7 +51,7 @@ export function Cursor() {
           boxShadow: "var(--glow-violet)",
         }}
       >
-        {mode === "view" && (
+          {mode === "explore" && (
           <span className="font-display text-[0.6rem] tracking-[0.28em] text-foreground">VIEW</span>
         )}
       </motion.div>

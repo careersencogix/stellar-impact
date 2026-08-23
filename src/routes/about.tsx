@@ -43,7 +43,7 @@ function About() {
         lines={
           <AnimatedLines
             className="display-xl"
-            lines={["We build", "digital", "momentum."]}
+            lines={["We shape", "bold ideas", "into impact."]}
             accentLine={1}
           />
         }
@@ -100,7 +100,7 @@ function About() {
               />
               <p className="eyebrow relative">Mission</p>
               <h3 className="font-display relative mt-6 text-[clamp(1.8rem,3.4vw,3rem)] leading-[1.05] font-bold">
-                <WordReveal text="“Turn ideas into brands people remember.”" />
+                <WordReveal text="“Make every message worth remembering.”" />
               </h3>
             </div>
           </Reveal>
@@ -112,7 +112,7 @@ function About() {
               />
               <p className="eyebrow relative">Vision</p>
               <p className="relative mt-6 text-[clamp(1.15rem,2vw,1.6rem)] leading-snug text-foreground/90">
-                Build a digital ecosystem where brands don't chase attention — they command it.
+                Build a growth system where every meaningful connection moves the business forward.
               </p>
             </div>
           </Reveal>
@@ -206,7 +206,7 @@ function About() {
         <Reveal variant="scale">
           <div className="flex flex-col items-center gap-8 rounded-[2.5rem] border border-border bg-surface/50 px-6 py-20 text-center md:py-28">
             <h2 className="display-lg">
-              Let's build your <span className="text-gradient">momentum.</span>
+              Let's turn your <span className="text-gradient">vision into impact.</span>
             </h2>
             <Cta to="/contact">Let's Talk</Cta>
           </div>

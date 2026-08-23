@@ -15,9 +15,9 @@ import { PageHero, Section, SectionLabel } from "@/components/site/Section";
 import { AnimatedLines, Reveal } from "@/components/site/motion-primitives";
 import { SERVICES } from "@/lib/site-data";
 
-const TITLE = "Services | Digital Marketing, SEO & Performance — Microweb Solution";
+const TITLE = "Services | Email Marketing, SEO & Performance — Microweb Solution";
 const DESC =
-  "Explore Microweb Solution services: digital marketing, SEO, social media, performance marketing, web development, branding, content and analytics.";
+  "Explore Microweb Solution services: email marketing, SEO, social media, performance marketing, web development, branding, content and analytics.";
 
 export const Route = createFileRoute("/services")({
   head: () => ({

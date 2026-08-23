@@ -1,11 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Code2, LineChart, Palette, PenTool, Rocket, Search, Share2, Target } from "lucide-react";
-import { useState } from "react";
-import heroOrb from "@/assets/hero-orb.jpg";
-import workNova from "@/assets/work-nova.jpg";
-import workVertex from "@/assets/work-vertex.jpg";
-import workLumora from "@/assets/work-lumora.jpg";
 import { Cta } from "@/components/site/Cta";
 import { Marquee } from "@/components/site/Marquee";
 import { Section, SectionLabel } from "@/components/site/Section";
@@ -13,15 +8,14 @@ import {
   AnimatedLines,
   Counter,
   Magnetic,
-  Parallax,
   Reveal,
   WordReveal,
 } from "@/components/site/motion-primitives";
-import { CLIENTS, MARQUEE_WORDS, PROJECTS, SERVICES, STATS } from "@/lib/site-data";
+import { CLIENTS, MARQUEE_WORDS, SERVICES, STATS } from "@/lib/site-data";
 
-const TITLE = "Microweb Solution | Digital Marketing & Growth Agency";
+const TITLE = "Microweb Solution | Email Marketing & Growth Agency";
 const DESC =
-  "Microweb Solution helps ambitious brands grow through digital marketing, SEO, social media, performance marketing, branding and technology.";
+  "Microweb Solution helps ambitious brands grow through email marketing, SEO, social media, performance marketing, branding and technology.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,7 +37,7 @@ export const Route = createFileRoute("/")({
           "@type": "Organization",
           name: "Microweb Solution",
           description: DESC,
-          email: "hello@microwebsolution.com",
+          email: "support@microwebsolutionllc.com",
           address: { "@type": "PostalAddress", addressCountry: "IN" },
         }),
       },
@@ -53,8 +47,6 @@ export const Route = createFileRoute("/")({
 });
 
 const ICONS = { Rocket, Search, Share2, Target, Code2, Palette, PenTool, LineChart };
-const WORK_IMAGES = { nova: workNova, vertex: workVertex, lumora: workLumora };
-
 function Home() {
   return (
     <>
@@ -63,7 +55,6 @@ function Home() {
       <Marquee items={MARQUEE_WORDS} />
       <AboutSnapshot />
       <ServicesPreview />
-      <FeaturedWork />
       <FinalCta />
     </>
   );
@@ -81,7 +72,7 @@ function Hero() {
             transition={{ delay: 0.15, duration: 0.8 }}
           >
             <span className="h-1.5 w-1.5 rotate-45" style={{ background: "var(--gradient-neon)" }} />
-            Creative Digital Marketing &amp; Growth Agency
+            Creative Email Marketing &amp; Growth Agency
           </motion.p>
 
           <AnimatedLines
@@ -97,7 +88,7 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.85, duration: 0.8 }}
           >
-            Microweb Solution is a creative digital marketing agency helping ambitious brands turn
+            Microweb Solution is a creative email marketing agency helping ambitious brands turn
             attention into measurable growth.
           </motion.p>
 
@@ -128,18 +119,13 @@ function HeroVisual() {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="spin-slow absolute inset-6 rounded-full border border-border/70" />
-      <div
-        className="spin-slow absolute inset-16 rounded-full border border-dashed border-border"
-        style={{ animationDirection: "reverse", animationDuration: "38s" }}
-      />
       <div className="float-slow absolute inset-0 flex items-center justify-center">
         <img
-          src={heroOrb}
-          alt="Abstract glowing sphere representing digital growth momentum"
-          width={1280}
-          height={1280}
-          className="h-[86%] w-[86%] rounded-full object-cover mix-blend-screen"
+          src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85"
+          alt="Business professionals collaborating around a table"
+          width={1200}
+          height={800}
+          className="h-[86%] w-[92%] rounded-[2rem] object-cover shadow-2xl"
         />
       </div>
 
@@ -294,68 +280,6 @@ function ServicesPreview() {
             </Reveal>
           );
         })}
-      </div>
-    </Section>
-  );
-}
-
-function FeaturedWork() {
-  const [hovered, setHovered] = useState<string | null>(null);
-  return (
-    <Section>
-      <SectionLabel>Featured work</SectionLabel>
-      <h2 className="display-lg mt-6 max-w-3xl">
-        Case studies with <span className="text-gradient">receipts.</span>
-      </h2>
-
-      <div className="mt-16 space-y-6">
-        {PROJECTS.slice(0, 3).map((p, i) => (
-          <Reveal key={p.id} variant="clip" delay={i * 0.05}>
-            <Link
-              to="/work"
-              data-cursor="view"
-              onMouseEnter={() => setHovered(p.id)}
-              onMouseLeave={() => setHovered(null)}
-              className="group grid items-center gap-8 rounded-3xl border border-border bg-surface/40 p-5 transition-colors duration-500 hover:border-foreground/25 md:grid-cols-[0.9fr_1.1fr] md:p-7"
-            >
-              <div className="relative aspect-[16/11] overflow-hidden rounded-2xl">
-                <Parallax distance={26}>
-                  <img
-                    src={WORK_IMAGES[p.image]}
-                    alt={`${p.name} case study visual`}
-                    loading="lazy"
-                    width={1280}
-                    height={960}
-                    className="h-full w-full scale-105 object-cover transition-transform duration-[900ms] group-hover:scale-115"
-                  />
-                </Parallax>
-                <div
-                  className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-55"
-                  style={{ background: "var(--gradient-neon)", mixBlendMode: "soft-light" }}
-                />
-              </div>
-              <div>
-                <p className="eyebrow">
-                  {p.id} — {p.category}
-                </p>
-                <h3 className="font-display mt-4 text-[clamp(2.2rem,6vw,4.5rem)] leading-[0.9] font-bold uppercase">
-                  {p.name}
-                </h3>
-                <p className="mt-5 max-w-md text-sm text-muted-foreground">{p.description}</p>
-                <div className="mt-7 flex items-center gap-5">
-                  <span className="font-display text-lg font-bold text-gradient">{p.result}</span>
-                  <span
-                    className={`inline-flex items-center gap-2 font-display text-xs tracking-[0.18em] uppercase transition-opacity duration-500 ${
-                      hovered === p.id ? "opacity-100" : "opacity-60"
-                    }`}
-                  >
-                    View case study <ArrowRight className="h-4 w-4" />
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </Reveal>
-        ))}
       </div>
     </Section>
   );

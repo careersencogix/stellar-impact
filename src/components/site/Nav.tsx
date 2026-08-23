@@ -36,12 +36,13 @@ export function Nav() {
       >
         <nav className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-5 md:px-10">
           <Link to="/" className="flex flex-col leading-none" onClick={() => setOpen(false)}>
-            <span className="font-display text-lg font-bold tracking-[0.18em] uppercase md:text-xl">
-              Microweb
-            </span>
-            <span className="font-display text-[0.55rem] tracking-[0.42em] text-muted-foreground uppercase">
-              Solution
-            </span>
+            <img
+              src="/logo.jpeg"
+              alt="Microweb Solutions"
+              width={180}
+              height={180}
+              className="h-12 w-28 object-contain object-left md:h-14 md:w-32"
+            />
           </Link>
 
           <ul className="hidden items-center gap-1 lg:flex">
@@ -114,8 +115,8 @@ export function Nav() {
               ))}
             </ul>
             <div className="mt-12 space-y-1 text-sm text-muted-foreground">
-              <p>hello@microwebsolution.com</p>
-              <p>+91 98765 43210</p>
+              <p>support@microwebsolutionllc.com</p>
+              <p>7897402440</p>
             </div>
           </motion.div>
         )}

@@ -1,8 +1,8 @@
 export const BRAND = {
   name: "Microweb Solution",
   tagline: "We Make Brands Impossible to Ignore.",
-  email: "hello@microwebsolution.com",
-  phone: "+91 98765 43210",
+  email: "support@microwebsolutionllc.com",
+  phone: "7897402440",
   location: "India",
 };
 
@@ -15,7 +15,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const MARQUEE_WORDS = [
-  "Digital Marketing",
+  "Email Marketing",
   "SEO",
   "Branding",
   "Social Media",
@@ -28,7 +28,6 @@ export const MARQUEE_WORDS = [
 export const CLIENTS = [
   "NOVA",
   "VERTEX",
-  "LUMORA",
   "AURA",
   "MONO",
   "ORBIT",
@@ -46,7 +45,7 @@ export const STATS = [
 export const SERVICES = [
   {
     num: "01",
-    title: "Digital Marketing",
+    title: "Email Marketing",
     icon: "Rocket",
     short: "Strategy, campaigns, content and growth systems.",
     long: "Build a complete digital growth engine around your brand — from positioning to full-funnel execution.",
@@ -142,7 +141,7 @@ export type Project = {
   filter: string;
   description: string;
   result: string;
-  image: "nova" | "vertex" | "lumora";
+  image: "nova" | "vertex";
 };
 
 export const PROJECTS: Project[] = [
@@ -165,15 +164,6 @@ export const PROJECTS: Project[] = [
     image: "vertex",
   },
   {
-    id: "03",
-    name: "Lumora",
-    category: "Brand Transformation",
-    filter: "BRANDING",
-    description: "A complete identity system and campaign platform for a lifestyle challenger brand.",
-    result: "+210% Social Engagement",
-    image: "lumora",
-  },
-  {
     id: "04",
     name: "Aura",
     category: "Performance Marketing",
@@ -189,7 +179,7 @@ export const PROJECTS: Project[] = [
     filter: "WEB",
     description: "High-performance site rebuild with a motion-led design system and CRO program.",
     result: "+68% Conversion Rate",
-    image: "lumora",
+    image: "vertex",
   },
   {
     id: "06",
@@ -200,14 +190,41 @@ export const PROJECTS: Project[] = [
     result: "+320% Engagement",
     image: "nova",
   },
+  {
+    id: "07",
+    name: "Pulse",
+    category: "Email Marketing Campaign",
+    filter: "EMAIL",
+    description: "Lifecycle email journeys and conversion-focused campaigns for a growing subscription brand.",
+    result: "+46% Email Revenue",
+    image: "vertex",
+  },
+  {
+    id: "08",
+    name: "Signal",
+    category: "Content Marketing",
+    filter: "CONTENT",
+    description: "A content engine that connected expert storytelling with qualified demand across every channel.",
+    result: "+124% Qualified Traffic",
+    image: "nova",
+  },
+  {
+    id: "09",
+    name: "Frame",
+    category: "Branding & Creative",
+    filter: "BRANDING",
+    description: "A sharper visual identity and campaign system built to make a new brand instantly recognisable.",
+    result: "+82% Brand Recall",
+    image: "vertex",
+  },
 ];
 
-export const WORK_FILTERS = ["ALL", "BRANDING", "SEO", "SOCIAL", "PERFORMANCE", "WEB"];
+export const WORK_FILTERS = ["SEO", "SOCIAL", "PERFORMANCE", "WEB", "EMAIL", "CONTENT", "BRANDING"];
 
 export const FAQS = [
   {
     q: "What services do you provide?",
-    a: "Digital marketing strategy, SEO, social media marketing, performance marketing, web development, branding and creative, content marketing, and analytics and growth consulting.",
+    a: "Email marketing strategy, SEO, social media marketing, performance marketing, web development, branding and creative, content marketing, and analytics and growth consulting.",
   },
   {
     q: "How long does a project take?",
